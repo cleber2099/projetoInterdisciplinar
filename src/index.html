@@ -10,174 +10,145 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     
-		<style>
-			.carousel-open:checked + .carousel-item {
-				position: static;
-				opacity: 100;
-			}
-			.carousel-item {
-				-webkit-transition: opacity 0.6s ease-out;
-				transition: opacity 0.6s ease-out;
-			}
-			#carousel-1:checked ~ .control-1,
-			#carousel-2:checked ~ .control-2,
-			#carousel-3:checked ~ .control-3 {
-				display: block;
-			}
-			.carousel-indicators {
-				list-style: none;
-				margin: 0;
-				padding: 0;
-				position: absolute;
-				bottom: 2%;
-				left: 0;
-				right: 0;
-				text-align: center;
-				z-index: 10;
-			}
-			#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
-			#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
-			#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet {
-				color: #2b6cb0;  /*Set to match the Tailwind colour you want the active one to be */
-			}
-		</style>
+
 </head>
-<body>
-<!-- Navibar -->
-  <header>
-    <div class="flex fixed bg-black w-full px-3 md:px-20 py-4">
-      <div class="container flex items-center mx-auto">
-        <div>
-          <a href="#">
-            <img src="img/logo.jpeg" alt="Spotify" class="w-20 md:w-200px">
-          </a>
-        </div>
-        <div class="flex justify-end flex-1 md:hidden text-white text-3xl">
-          <i class="fas fa-bars"></i>
-        </div>
-        <div class="items-end flex-1 text-white font-bold hidden md:flex">
-          <nav class="flex-1">
-            <ul class="flex justify-end flex-1">
-              <li class="px-4">
-                <a href="#" class="hover:text-hoverspt text-sm">Premium</a>
-              </li>
-              <li class="px-4">
-                <a href="#" class="hover:text-hoverspt text-sm">Ajuda</a>
-              </li>
-              <li class="px-4">
-                <a href="#" class="hover:text-hoverspt text-sm">Baixar</a>
-              </li>
-              <li class="px-4">
-                <span class="border-r border-white"></span>
-              </li>
-              <li class="px-4">
-                <a href="#" class="hover:text-hoverspt text-sm">Inscrever-se</a>
-              </li>
-              <li class="px-4">
-                <a href="#" class="hover:text-hoverspt text-sm">Log In</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </div>
-  </header>    
-  <main class=" md:w-screen ">
-    <div class="flex flex-col justify-center text-center bg-spotify-theme-mobile md:bg-spotify-theme bg-banner-mobile md:bg-banner bg-195% md:bg-175% bg-black text-green-main py-40 px-4">
-      <h1 class="text-5xl md:text-9xl mb-10 font-bold max-w-4xl mx-auto leading-none"><img src="img/logo.jpeg" alt=""></h1>
-      <!-- <p class="text-md md:text-lg mb-10">Milhões de músicas e podcasts para explorar. E nem precisa de cartão de crédito.</p> -->
-      <a href="#" class="bg-green-main hover:bg-white text-purple-main text-sm rounded-full px-10 py-3 uppercase font-bold max-w-xl mx-auto tracking-widest transition duration-500">Obtenha o Spotify Free</a>
-    </div>
-  </main>
-  <!-- quem somos -->
-  <div  class="md:mt-auto md:w-screen md:h-screen md:flex-row flex-col   flex-wrap m-auto flex   justify-center">
-    <div class="border-r-2 border-t-slate-500 p-3 justify-center md:h-3/4 md:w-1/3">
-      <p class="md:mt-10 text-sm text-center whitespace-pre-wrap   ">               A DUONE Arquitetura nasce da parceria
-        entre dois arquitetos, Arícia Martins e Thiago
-        Almeida, que almejam um objetivo em comum:
-        auxiliar na realização dos sonhos de cada
-        cliente no âmbito construtivo e do design.
-               Atuamos com arquitetura, criação,
-        colaboração, assistência à outros profissionais,
-        detalhamento executivo e renderização 3D de
-        imagens em alta qualidade, para melhor
-        apresentação de projetos e divulgação nas
-        redes sociais.
-              Acreditamos que a nossa formação e
-        experiência profissional, somada à dedicação
-        e cuidado projetual, nos possibilitem contribuir
-        de uma excelente forma à sua empresa.
-             Temos a convicção de que podemos
-        colaborar para o crescimento, fluidez em seus
-        projetos e alcance de suas metas.</p>
-    </div>
-    <div class=" md:h-3/4  md:w-1/3 flex flex-col md:flex-col md:align-middle justify-center  p-3 " >
-      <h1 class="text-center my-4">Quem Somos ?</h1>
-      <div class="flex md:h-3/4  justify-center ">
-        <img class="md:md:" src="img/arcs.jpeg" alt="">
-      </div>
-      <p  class=" whitespace-pre-wrap text-center">
-        ARICIA  MARTINS  |   THIAGO  ALMEIDA 
-        A R Q U I T E T O S
-      </p>
-      
-    </div>
-
-  </div>
-
-  <div class="flex flex-row justify-center text-center bg-red-300">
-    <div class="carousel relative shadow-2xl bg-white md:w-6/12 ">
-      <div class="carousel-inner relative overflow-hidden w-full">
-        <!--Slide 1-->
-        <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
-        <div class="carousel-item absolute opacity-0" style="height:50vh;">
-          <div class="block h-full w-full bg-indigo-500 text-white text-5xl text-center">
+<body  class="snap-y snap-mandatory h-screen w-screen overflow-scroll">
   
-            <img class="md:h-2/4" src="img/arcs.jpeg" alt="">
+    <div >
+    <div class= "h-screen w-screen snap-start flex mt-0 flex-col justify-center text-center   md:bg-banner bg-195% md:bg-175% bg-black text-green-main py-40 px-4">
+       <img class="mt-0" src="img/logo2.png" alt="">
+  
+    </div>
+  
+    <div  class="snap-start md:mt-auto w-screen h-screen md:flex-row flex-col   flex-wrap m-auto flex   justify-center">
+      <div class="border-r-2 border-t-slate-500 p-3 justify-center md:h-3/4 md:w-1/3">
+        <p class="md:mt-10 text-sm text-center whitespace-pre-wrap   ">               A DUONE Arquitetura nasce da parceria
+          entre dois arquitetos, Arícia Martins e Thiago
+          Almeida, que almejam um objetivo em comum:
+          auxiliar na realização dos sonhos de cada
+          cliente no âmbito construtivo e do design.
+                 Atuamos com arquitetura, criação,
+          colaboração, assistência à outros profissionais,
+          detalhamento executivo e renderização 3D de
+          imagens em alta qualidade, para melhor
+          apresentação de projetos e divulgação nas
+          redes sociais.
+                Acreditamos que a nossa formação e
+          experiência profissional, somada à dedicação
+          e cuidado projetual, nos possibilitem contribuir
+          de uma excelente forma à sua empresa.
+               Temos a convicção de que podemos
+          colaborar para o crescimento, fluidez em seus
+          projetos e alcance de suas metas.</p>
+      </div>
+      <div class=" md:h-3/4  md:w-1/3 flex flex-col md:flex-col md:align-middle justify-center  p-3 " >
+        <h1 class="text-center my-4">Quem Somos ?</h1>
+        <div class="flex md:h-3/4  justify-center ">
+          <img class="md:md:" src="img/arcs.jpeg" alt="">
+        </div>
+        <p  class=" whitespace-pre-wrap text-center">
+          ARICIA  MARTINS  |   THIAGO  ALMEIDA 
+          A R Q U I T E T O S
+        </p>
+        
+      </div>
+  
+    </div>
+  
+    <div class=" snap-start h-screen w-screen  flex flex-col md:overflow-hidden">
+      <div class=" flex text-center justify-center mb-3">
+        <h1 class="flex text-center font-bold">Serviços</h1>
+      </div>
+      <div class="flex flex-col md:flex-row justify-around md:h-full">
+        <div class="justify-center text-center flex flex-col md:flex-col md:h-full md:w-1/5 bg-ca">
+          <div class=" flex flex-col md:h-3/6 mb-5">
+            <img class="flex  md:mb-5" src="img/arcs.jpeg" alt="">
           </div>
-          
-         
+          <div class=" flex  flex-col h-3/6">
+            <h1 class="md:mt-8 mb-5" >Arquitetura empresarial</h1>
+            <ul class="mb-5">
+              <!-- li com itens abaixo -->
+              <li>Visita e levantamento do local</li>
+              <li>Reunião presencial/online de Briefing</li>
+              <li>Projeto com imagens em 3D</li>
+              <li> Detalhamento técnico para construção</li>
+              <li>Acompanhamento nas compras de revestimentos</li>
+            </ul>
+  
+          </div>
   
         </div>
-        <label for="carousel-3" class="prev control-1 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-        <label for="carousel-2" class="next control-1 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-        
-        <!--Slide 2-->
-        <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
-        <div class="carousel-item absolute opacity-0" style="height:50vh;">
-          <div class="block h-full w-full bg-orange-500 text-white text-5xl text-center">Slide 2</div>
+        <div class="justify-center text-center flex flex-col md:flex-col md:h-full md:w-1/5 bg-ca">
+          <div class=" flex flex-col md:h-3/6 mb-5">
+            <img class="flex  md:mb-5" src="img/arcs.jpeg" alt="">
+          </div>
+          <div class=" flex  flex-col h-3/6">
+            <h1 class="md:mt-8 mb-5" >Arquitetura de interiores</h1>
+            <ul class="mb-5">
+              <li>Visita e levantamento do local</li>
+              <li>Reunião presencial de Briefing</li>
+              <li>Projeto com imagens em 3D</li>
+              <li>Indicação de produtos e fornecedores
+              </li>
+              <li>Montagem do ambiente para ficar como você sempre sonhou</li>
+  
+            </ul>
+          </div>
+  
         </div>
-        <label for="carousel-1" class="prev control-2 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-        <label for="carousel-3" class="next control-2 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label> 
-        
-        <!--Slide 3-->
-        <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
-        <div class="carousel-item absolute opacity-0" style="height:50vh;">
-          <div class="block h-full w-full bg-green-500 text-white text-5xl text-center">Slide 3</div>
+  
+        <div class="justify-center text-center flex flex-col md:flex-col md:h-full md:w-1/5 bg-ca">
+          <div class=" flex flex-col md:h-3/6 mb-5">
+            <img class="flex  md:mb-5" src="img/arcs.jpeg" alt="">
+          </div>
+          <div class=" flex  flex-col h-3/6">
+            <h1 class="md:mt-8 mb-3" >Consultaria</h1>
+            <ul class="mb-5">
+              <li>Online ou presencial</li>
+              <li>Reunião online de Briefing</li>
+              <li>Apresentação online de uma planta layout e moodboard</li>
+              <li>Lista de sugestão de itens para compra</li>
+              <li>Consultoria online Plus</li>
+              <li>Com projeto em 3D</li>
+            </ul>
+          </div>
+  
         </div>
-        <label for="carousel-2" class="prev control-3 w-10 h-10 ml-2 md:ml-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 left-0 my-auto">‹</label>
-        <label for="carousel-1" class="next control-3 w-10 h-10 mr-2 md:mr-10 absolute cursor-pointer hidden text-3xl font-bold text-black hover:text-white rounded-full bg-white hover:bg-blue-700 leading-tight text-center z-10 inset-y-0 right-0 my-auto">›</label>
-    
-        <!-- Add additional indicators for each slide-->
-        <ol class="carousel-indicators">
-          <li class="inline-block mr-3">
-            <label for="carousel-1" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
-          </li>
-          <li class="inline-block mr-3">
-            <label for="carousel-2" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
-          </li>
-          <li class="inline-block mr-3">
-            <label for="carousel-3" class="carousel-bullet cursor-pointer block text-4xl text-white hover:text-blue-700">•</label>
-          </li>
-        </ol>
+  
+      </div>
+  
+    </div>
+  
+    <div  class="snap-start mt-auto w-screen h-screen md:flex-row flex-col   flex-wrap m-auto flex   justify-center">
+     
+      <div class=" md:mt-20 border-r-2 border-t-slate-500 p-3 justify-center md:h-3/4 md:w-1/3 ">
+        <div >
+          <h1 class="md:mt-14 font-bold"> Fale Conosco</h1>
+          <ul >
+            <li>João Pessoa - Paraíba, Brasil.</li>
+            <li>contato@duonearquitetura.com</li>
+            <li>+ 5 5 8 3 9 9 8 0 8 - 8 1 3 5</li>
+            <li>@ d u o n e a r q u i t e t u r a</li>
+          </ul>
+        </div>
+  
+      </div>
+      <div class="md:mt-14 md:h-3/4  md:w-1/3 flex flex-col md:flex-col md:align-middle justify-center  p-3 " >
+        
+        <div class="flex md:h-3/4  justify-center ">
+          <img class="md:md:" src="img/mc.png" alt="">
+        </div>
+        <p  class=" whitespace-pre-wrap text-center">
+          Todos os direitos reservados.
+          Copyright 2021, Duone.
+        </p>
         
       </div>
+  
     </div>
+   
+  
   </div>
-
-  
-  
-
-
+ 
 </body>
 </html>
